@@ -1,2 +1,2 @@
 # HangManGame
-Hang man game made with Vanilla JavaScript.
+Hangman game made with Vanilla JavaScript.
