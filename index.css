@@ -36,8 +36,8 @@ body {
 .titleWrap {
     position: relative;
     width: 50%;
-    height: 50%;
-    top: 23%;
+    height: 70%;
+    top: 17%;
 }
 
 .hangman {
@@ -55,9 +55,31 @@ body {
     width: 70%;
     height: 30%;
     font-size: 70px;
-    bottom: 20%;
+    bottom: 30%;
     left: 20%;
     text-align: center;
+}
+
+.wordInput {
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    bottom: 17%;
+    left: 25%;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 5px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 5px black;
+}
+
+.wordInput::placeholder {
+    letter-spacing: normal;
+}
+
+.wordInput:focus {
+    outline: none;
 }
 
 /*Hangman Image
@@ -65,10 +87,35 @@ body {
 .hangmanImg {
     position: absolute;
     width: 300px;
-    height: 500px;
+    height: 450px;
     top: 20%;
     right: 10%;
     background-image: url(img/hangman.png);
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
+}
+
+.hangmanImg2 {
+    position: absolute;
+    width: 300px;
+    height: 450px;
+    top: 20%;
+    right: 10%;
+    background-image: url(img/hangman2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+/*JavaScript Settings
+*/
+.openingWrap,
+.hangmanImg,
+.hangmanImg2 {
+    display: none;
+}
+
+.showing {
+    display: block;
 }
