@@ -2,6 +2,7 @@ const openingWrap = document.querySelector(".js-openingWrap");
 const wordInput = document.querySelector(".js-wordInput");
 const hangman = document.querySelector(".js-hangmanImg");
 const hangman2 = document.querySelector(".js-hangmanImg2");
+const mainWrap = document.querySelector(".js-mainWrap");
 
 const SHOWING_CLASS = "showing";
 
@@ -19,11 +20,12 @@ function handleEnterUp(event) {
             }
         }
         if (count === word.length) {
-            answer = word;
+            answer = word.toUpperCase();
             wordInput.value = "";
             wordInput.blur();
             openingWrap.classList.remove(SHOWING_CLASS);
-            console.log(answer);
+            mainWrap.classList.add(SHOWING_CLASS);
+            running();
         } else {
             wordInput.value = "";
             alert("Please write words using only the alphabet.");
@@ -49,11 +51,12 @@ function handleMouseUp(event) {
             }
         }
         if (count === word.length) {
-            answer = word;
+            answer = word.toUpperCase();
             wordInput.value = "";
             wordInput.blur();
             openingWrap.classList.remove(SHOWING_CLASS);
-            console.log(answer);
+            mainWrap.classList.add(SHOWING_CLASS);
+            running();
         } else {
             wordInput.value = "";
             alert("Please write words using only the alphabet.");
@@ -76,6 +79,7 @@ function handleMouseOver(event) {
 
 function init() {
     openingWrap.classList.add(SHOWING_CLASS);
+    mainWrap.classList.remove(SHOWING_CLASS);
     hangman.classList.add(SHOWING_CLASS);
     hangman2.classList.remove(SHOWING_CLASS);
     hangman.addEventListener("mouseover", handleMouseOver);
